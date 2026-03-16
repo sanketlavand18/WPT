@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>prototype</h1>
+   <script>
+    // 1. Define the Constructor (The Blueprint)
+function User(id, name, email) {
+    this.id = id;
+    this.name = name;
+    this.email = email;
+}
+
+// 2. Add the print function using the Prototype
+User.prototype.printDetails = function() {
+    console.log(`ID: ${this.id}, Name: ${this.name}, Email: ${this.email}`);
+};
+
+// 3. Create 2 distinct objects
+let user1 = new User(101, "Alice", "alice@example.com");
+let user2 = new User(102, "Bob", "bob@example.com");
+
+// 4. Call the prototype function
+user1.printDetails();
+user2.printDetails();
+   </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            border: 2px solid black;
+            margin-left: 450px;
+            margin-top: 50px;
+            width: 250px;
+            padding: 10px;
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <form onsubmit="return validation()" action="./home.html">
+        <h1 style="margin-left: 50px;">Login page</h1> <br><br>
+        <label for="">Username: </label>
+        <input type="text" id="user"> <br><br>
+        <label for="">password: </label>
+        <input type="password" id="pass"><br><br>
+       <input type="submit" value="login" style="margin-left:50px ;">
+    </form>
+
+    
+        
+<script>
+    function validation() {
+        let userv = document.getElementById("user").value;
+        let passv = document.getElementById("pass").value;
+
+        
+        if (userv === "" || passv === "") {
+            alert("Both fields are required!");
+            return false;
+        };
+
+        
+        if (passv.length < 8 || passv.length > 12) {
+            alert("Password must be between 8 and 12 characters.");
+            return false;
+        }
+
+        
+        if (userv === "iet" && passv === "iet12345") {
+            alert("Login successful!");
+            return true;
+        } else {
+            alert("Invalid username or password.");
+            return false; 
+        }
+    }
+</script>        
+
+    </script>
+</body>
+</html>
